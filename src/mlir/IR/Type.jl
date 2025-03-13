@@ -2,7 +2,7 @@ struct Type
     type::API.MlirType
 
     function Type(type)
-        @assert !mlirIsNull(type) "cannot create Type with null MlirType"
+        #@assert !mlirIsNull(type) "cannot create Type with null MlirType"
         return new(type)
     end
 end

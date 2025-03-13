@@ -56,7 +56,7 @@ function Base.promote_rule(::Type{T}, ::Type{TracedRNumber{S}}) where {T,S}
 end
 
 function Base.promote_rule(::Type{T}, ::Type{Reactant.TracedRNumber{S}}) where {T<:AbstractIrrational, S}
-    return TracedRNumber{S}
+    return TracedRNumber{Base.promote_type(Irrational, S)}
 end
 
 function Base.promote_rule(::Type{TracedRNumber{T}}, ::Type{S}) where {T,S}
